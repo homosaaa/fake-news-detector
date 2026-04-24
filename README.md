@@ -1,93 +1,144 @@
-# Fake News Detection 📰 (ML vs DL Comparison)
+# 📰 Fake News Detection System (ML vs RNN vs LSTM)
 
-## 📌 Overview
-This project compares two different approaches for Fake News Detection:
+---
 
-1. **Machine Learning Model (TF-IDF + Logistic Regression)**
-2. **Deep Learning Model (RNN - LSTM)**
+## 📌 Project Overview
 
-Both models aim to classify news articles as:
-- Fake News (0)
-- Real News (1)
+This project is an NLP-based Fake News Detection System that compares three approaches:
 
-The goal is to analyze the performance difference between traditional ML and Deep Learning approaches on NLP tasks.
+- Machine Learning Model (TF-IDF + Logistic Regression)
+- Deep Learning Model (RNN)
+- Deep Learning Model (LSTM)
+
+The goal is to classify news articles into:
+
+- 0 → Fake News  
+- 1 → Real News  
+
+And compare traditional Machine Learning vs Deep Learning models.
 
 ---
 
 ## 📂 Dataset
-The dataset used is the **Fake and Real News Dataset** from Kaggle:
 
-🔗 https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset
+Dataset used from Kaggle:
+
+https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset
 
 It contains:
-- Fake.csv
-- True.csv
+
+- Fake.csv → Fake news articles  
+- True.csv → Real news articles  
 
 ---
 
-## ⚙️ Approaches Used
+## ⚙️ Project Workflow
 
-### 🧠 1. Machine Learning Model
+- Load dataset
+- Merge title + text
+- Label encoding
+- Shuffle data
+- Text preprocessing
+- Train/Test split
+- Model training
+- Evaluation
+
+---
+
+# 🧠 Models
+
+---
+
+## 📌 1. Machine Learning Model (Logistic Regression)
+
 - TF-IDF Vectorization
-- Logistic Regression
-- Simple and fast baseline model
+- Logistic Regression classifier
 
-#### 📊 ML Workflow:
-1. Text cleaning
-2. TF-IDF feature extraction
-3. Train/Test split
-4. Logistic Regression training
-5. Evaluation
+### Steps:
+- Text cleaning
+- TF-IDF feature extraction
+- Train/Test split
+- Model training
+- Prediction
 
 ---
 
-### 🧠 2. Deep Learning Model (RNN - LSTM)
-- Tokenization (Keras Tokenizer)
+## 📌 2. Deep Learning Model (RNN)
+
+- Simple Recurrent Neural Network
+
+### Architecture:
+Embedding → RNN → Dense → Sigmoid
+
+### Steps:
+- Tokenization
 - Padding sequences
-- LSTM-based neural network
-
-#### 📊 DL Workflow:
-1. Text preprocessing
-2. Tokenization
-3. Sequence padding
-4. Embedding layer
-5. LSTM layer
-6. Dense output layer
-7. Training & evaluation
+- Embedding layer
+- RNN layer
+- Training & evaluation
 
 ---
 
-## 🧠 Model Architectures
+## 📌 3. Deep Learning Model (LSTM)
 
-### ML Model:
-- TF-IDF → Logistic Regression
+- Long Short-Term Memory network
 
-### DL Model:
-- Embedding → LSTM → Dense → Sigmoid
+### Architecture:
+Embedding → Bidirectional LSTM → Dense → Dropout → Sigmoid
 
----
-
-## 📊 Performance Comparison
-
-| Model | Type | Accuracy | Speed | Complexity |
-|------|------|----------|-------|------------|
-| ML (Logistic Regression) | Classical ML | ~95-98% | Fast | Low |
-| DL (RNN) | Deep Learning | ~95%+ | Slower | High |
+### Steps:
+- Tokenization
+- Padding sequences
+- Embedding layer
+- LSTM layers
+- Training & evaluation
 
 ---
 
-## 🧠 Technologies Used
-- Python 🐍
-- Pandas 📊
-- NumPy 🔢
-- Scikit-learn ⚙️
-- TensorFlow / Keras 🤖
+# 📊 Model Comparison
+
+| Model | Type | Architecture | Accuracy | Speed | Context Understanding | Complexity |
+|------|------|-------------|----------|-------|------------------------|------------|
+| Logistic Regression | ML | TF-IDF → Logistic Regression | ~95–98% | ⚡ Very Fast | ❌ Low | Low |
+| RNN | DL | Embedding → RNN → Dense | ~93–96% | ⚡ Medium | ⚠️ Medium | Medium |
+| LSTM | DL | Embedding → BiLSTM → Dense → Dropout | ~95%+ | 🐢 Slower | ✅ High | High |
+
+---
+
+# 🧠 Summary
+
+- Logistic Regression:
+  - Fastest model
+  - Strong baseline
+  - Weak context understanding
+
+- RNN:
+  - Handles sequences
+  - Medium performance
+  - Weak on long dependencies
+
+- LSTM:
+  - Best performance in NLP
+  - Strong context understanding
+  - Slowest but most powerful
+
+---
+
+# 🧰 Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- TensorFlow / Keras
+- Matplotlib
 - NLP Techniques
 
 ---
 
-## 🚀 How to Run
+# 🚀 How to Run
 
-### 🔹 Install dependencies
+### 1. Install dependencies
+
 ```bash
-pip install pandas numpy scikit-learn tensorflow streamlit
+pip install pandas numpy scikit-learn tensorflow matplotlib
