@@ -1,61 +1,93 @@
-# Fake News Detector 📰
+# Fake News Detection 📰 (ML vs DL Comparison)
 
 ## 📌 Overview
-This project is a Machine Learning-based Fake News Detection system that classifies news articles as either **Fake (0)** or **Real (1)** using Natural Language Processing (NLP) techniques.
+This project compares two different approaches for Fake News Detection:
 
-The model is trained using a dataset of real and fake news articles and uses **TF-IDF Vectorization** with **Logistic Regression** for classification.
+1. **Machine Learning Model (TF-IDF + Logistic Regression)**
+2. **Deep Learning Model (RNN - LSTM)**
 
-A simple **Streamlit web app** is built to allow real-time predictions.
+Both models aim to classify news articles as:
+- Fake News (0)
+- Real News (1)
+
+The goal is to analyze the performance difference between traditional ML and Deep Learning approaches on NLP tasks.
 
 ---
 
 ## 📂 Dataset
-The dataset used in this project is the **Fake and Real News Dataset** from Kaggle:
+The dataset used is the **Fake and Real News Dataset** from Kaggle:
 
 🔗 https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset
 
 It contains:
-- Fake.csv → Fake news articles
-- True.csv → Real news articles
-
-Each article includes:
-- Title
-- Text
-- Subject
-- Date
-- Label (0 = Fake, 1 = Real)
+- Fake.csv
+- True.csv
 
 ---
 
-## ⚙️ Workflow
-1. Load dataset
-2. Assign labels (Fake = 0, Real = 1)
-3. Merge datasets
-4. Clean text data
-5. Split into training and testing sets
-6. Convert text into numerical features using TF-IDF
-7. Train Logistic Regression model
-8. Evaluate model performance
-9. Deploy using Streamlit
+## ⚙️ Approaches Used
+
+### 🧠 1. Machine Learning Model
+- TF-IDF Vectorization
+- Logistic Regression
+- Simple and fast baseline model
+
+#### 📊 ML Workflow:
+1. Text cleaning
+2. TF-IDF feature extraction
+3. Train/Test split
+4. Logistic Regression training
+5. Evaluation
+
+---
+
+### 🧠 2. Deep Learning Model (RNN - LSTM)
+- Tokenization (Keras Tokenizer)
+- Padding sequences
+- LSTM-based neural network
+
+#### 📊 DL Workflow:
+1. Text preprocessing
+2. Tokenization
+3. Sequence padding
+4. Embedding layer
+5. LSTM layer
+6. Dense output layer
+7. Training & evaluation
+
+---
+
+## 🧠 Model Architectures
+
+### ML Model:
+- TF-IDF → Logistic Regression
+
+### DL Model:
+- Embedding → LSTM → Dense → Sigmoid
+
+---
+
+## 📊 Performance Comparison
+
+| Model | Type | Accuracy | Speed | Complexity |
+|------|------|----------|-------|------------|
+| ML (Logistic Regression) | Classical ML | ~95-98% | Fast | Low |
+| DL (LSTM) | Deep Learning | ~95%+ | Slower | High |
 
 ---
 
 ## 🧠 Technologies Used
-- Python
-- Pandas
-- Scikit-learn
-- Streamlit
-- NLP (TF-IDF)
-
----
-
-## 📊 Model Performance
-The model achieved high accuracy (~98%) on the test dataset, showing strong performance in distinguishing between fake and real news.
+- Python 🐍
+- Pandas 📊
+- NumPy 🔢
+- Scikit-learn ⚙️
+- TensorFlow / Keras 🤖
+- NLP Techniques
 
 ---
 
 ## 🚀 How to Run
 
-### 1. Install dependencies
+### 🔹 Install dependencies
 ```bash
-pip install streamlit pandas scikit-learn
+pip install pandas numpy scikit-learn tensorflow streamlit
