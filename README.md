@@ -72,7 +72,7 @@ It contains:
 | Model | Type | Accuracy | Speed | Complexity |
 |------|------|----------|-------|------------|
 | ML (Logistic Regression) | Classical ML | ~95-98% | Fast | Low |
-| DL (LSTM) | Deep Learning | ~95%+ | Slower | High |
+| DL (RNN) | Deep Learning | ~95%+ | Slower | High |
 
 ---
 
