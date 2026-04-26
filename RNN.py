@@ -16,9 +16,6 @@ from sklearn.model_selection import train_test_split
 # =========================
 # 2) Load Data
 # =========================
-path_fake = 'https://drive.google.com/uc?export=download&id=1HBriukI6SFSqFv2B67Hw4SDK4P9a5c1D'
-path_true = 'https://drive.google.com/uc?export=download&id=1CjNYkM4sSbNB4hJBCi-G_ZTmrVm_JU67'
-
 
 
 df_fake = pd.read_csv('Fake.csv')
