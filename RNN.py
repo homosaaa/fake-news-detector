@@ -17,6 +17,7 @@ from sklearn.model_selection import train_test_split
 # 2) Load Data
 # =========================
 
+# ===== Load Data =====
 
 df_fake = pd.read_csv('Fake.csv')
 df_true = pd.read_csv('True.csv')
